@@ -77,7 +77,7 @@ def main(a, b, c, z=time.time()):
   for x in range(len(sets)):
     if sets[x] == 1:
       cover.append(S[x])
-  print('covering sets: ', cover, '\n', 'total cost: ', cost, '$')
+  print(f'covering sets: {cover}\ntotal cost: {cost}')
   print('time:', time.time()-z)
 
 

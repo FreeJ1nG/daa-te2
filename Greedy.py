@@ -27,9 +27,8 @@ def main(a, b, c, x=time.time()):
   subsets = [set(x) for x in sub]
   costs = c
   cover = set_cover(universe, subsets, costs)
-  print('covering sets= ', cover[0], '\n',
-        'cost= ', cover[1], '$')
-  print('time: ', time.time()-x)
+  print(f'covering sets = {cover[0]}\ncost = {cover[1]}')
+  print(f'time = {time.time() - x}')
 
 
 m1 = 5
