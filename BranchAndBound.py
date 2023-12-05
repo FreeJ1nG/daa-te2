@@ -1,5 +1,6 @@
 # Referenced and originally authored by Andrea Rubbi
 import time
+from memory_profiler import profile
 
 
 def bypassbranch(subset, i):  # bypass a branch
@@ -24,6 +25,7 @@ def nextvertex(subset, i, m):
   return subset, 0
 
 
+@profile
 def BB(universe, sets, costs):
   subset = [1 for x in range(len(sets))]  # all sets in
   subset[0] = 0
@@ -78,7 +80,7 @@ def main(a, b, c, z=time.time()):
     if sets[x] == 1:
       cover.append(S[x])
   print(f'covering sets: {cover}\ntotal cost: {cost}')
-  print('time:', time.time()-z)
+  print(f'time: {(time.time()-z) * 1000}ms')
 
 
 m1 = 5

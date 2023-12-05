@@ -1,7 +1,9 @@
 __author__ = "Andrea Rubbi"
 import time
+from memory_profiler import profile
 
 
+@profile
 def set_cover(universe, subsets, costs):
   cost = 0
   elements = set(e for s in subsets for e in s)
@@ -28,7 +30,7 @@ def main(a, b, c, x=time.time()):
   costs = c
   cover = set_cover(universe, subsets, costs)
   print(f'covering sets = {cover[0]}\ncost = {cover[1]}')
-  print(f'time = {time.time() - x}')
+  print(f'time = {(time.time() - x) * 1000}ms')
 
 
 m1 = 5

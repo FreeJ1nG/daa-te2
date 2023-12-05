@@ -1,6 +1,7 @@
 from BranchAndBound import main as runBranchAndBound
 from Greedy import main as runGreedy
 from TestCaseGenerator import TestCaseGenerator, TestCase
+from memory_profiler import memory_usage
 
 
 class Runner:
@@ -16,6 +17,8 @@ class Runner:
       print("Running Branch And Bound algorithm ...")
       runBranchAndBound(case.n, case.S, case.W)
       print("Case finished :D")
+      mem_usage = memory_usage(-1, interval=.2, timeout=1)
+      print(mem_usage)
       print("========================================================================")
 
 
